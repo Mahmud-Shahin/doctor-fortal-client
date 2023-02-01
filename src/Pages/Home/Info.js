@@ -9,17 +9,17 @@ const Info = () => {
     <div className="grid grid-cols-1 lg:grid-cols-3  gap-4  ">
       <InfoCard
         cardTitle="opening hours"
-        bgClass="bg-neutral"
+        bgClass="bg-primary"
         img={clock}
       ></InfoCard>
       <InfoCard
         cardTitle="Our location"
-        bgClass="bg-neutral"
+        bgClass="bg-accent"
         img={marker}
       ></InfoCard>
       <InfoCard
         cardTitle="Contact us"
-        bgClass="bg-neutral"
+        bgClass="bg-secondary"
         img={phone}
       ></InfoCard>
     </div>
