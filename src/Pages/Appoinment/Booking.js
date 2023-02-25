@@ -4,8 +4,8 @@ const Booking = ({ booking, setTreatment }) => {
   const { name, slots } = booking;
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title text-secondary text-center ">{name}</h2>
+      <div className="card-body text-center">
+        <h2 className=" text-secondary text-xl font-bold ">{name}</h2>
         <p>
           {slots.length > 0 ? (
             <span>{slots[0]}</span>
@@ -21,7 +21,7 @@ const Booking = ({ booking, setTreatment }) => {
         <div className="card-actions justify-center">
           <label
             htmlFor="Booking-modal"
-            className="btn btn-secondary text-white uppercase "
+            className="btn btn-sm btn-secondary text-white uppercase "
             onClick={() => setTreatment(booking)}
             disabled={slots.length === 0}
           >
