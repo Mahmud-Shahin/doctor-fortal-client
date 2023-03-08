@@ -20,7 +20,7 @@ const AvailableAppoinment = ({ date }) => {
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 my-10">
         {bookings.map((booking) => (
           <Booking
-            key={booking.id}
+            key={booking._id}
             booking={booking}
             setTreatment={setTreatment}
           ></Booking>
