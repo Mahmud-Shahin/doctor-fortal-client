@@ -14,7 +14,6 @@ import MyAppoinment from "./Pages/Dashboard/MyAppoinment";
 import MyReview from "./Pages/Dashboard/MyReview";
 import Myhistory from "./Pages/Dashboard/Myhistory";
 import Users from "./Pages/Dashboard/Users";
-// import Users from "./Pages/Dashboard/Users";
 
 function App() {
   return (
