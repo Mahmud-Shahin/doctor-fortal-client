@@ -30,6 +30,7 @@ const Dashboard = () => {
               <>
                 <Link to="/dashboard/users">All users</Link>
                 <Link to="/dashboard/addDoctor"> Add a Doctor</Link>
+                <Link to="/dashboard/manageDoctor">Manage a doctor </Link>
               </>
             }
             {/* {admin && <Link to="/dashboard/users">All users</Link>} */}
