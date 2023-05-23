@@ -28,12 +28,25 @@ const AddDoctor = () => {
       .then((result) => {
         if (result.success) {
           const img = result.data.url;
-          const Doctor = {
+          const doctor = {
             name: data.name,
             email: data.email,
             speciality: data.speciality,
             img: img,
           };
+          // send to your database
+          fetch("http://localhost:5000/doctor", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+            body: JSON.stringify(doctor),
+          })
+            .then((res) => res.json())
+            .then((inserted) => {
+              console.log("doctor", inserted);
+            });
         }
       });
   };
