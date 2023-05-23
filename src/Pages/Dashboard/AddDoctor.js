@@ -2,11 +2,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Loading from "./../Shared/Loading";
+import { toast } from "react-toastify";
 const AddDoctor = () => {
   const {
     register,
     formState: { errors },
     handleSubmit,
+    reset,
   } = useForm();
 
   const { data: services, isLoading } = useQuery("services", () =>
@@ -45,7 +47,12 @@ const AddDoctor = () => {
           })
             .then((res) => res.json())
             .then((inserted) => {
-              console.log("doctor", inserted);
+              if (inserted.insertedId) {
+                toast.success("doctor added successfully");
+                reset();
+              } else {
+                toast.error("failed to added doctor");
+              }
             });
         }
       });
