@@ -127,7 +127,7 @@ const AddDoctor = () => {
             <span className="label-text">specialization</span>
           </label>
           <select
-            {...register("specialization")}
+            {...register("speciality")}
             className="select input-bordered w-full max-w-xs"
           >
             {services.map((service) => (

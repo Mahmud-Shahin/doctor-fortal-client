@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DoctorRow from "./DoctorRow";
 
 const ManageDoctor = () => {
   const { data: doctors, isLoading } = useQuery("doctors", () =>
@@ -17,6 +18,28 @@ const ManageDoctor = () => {
   return (
     <div>
       <h2 className="text-2xl"> Manage Doctor : {doctors.length}</h2>
+      <div className="overflow-x-auto">
+        <table className="table w-full">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Avatar</th>
+              <th>Name</th>
+              <th>Speciality</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {doctors.map((doctor, index) => (
+              <DoctorRow
+                key={doctor._id}
+                doctor={doctor}
+                index={index}
+              ></DoctorRow>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
