@@ -1,7 +1,7 @@
 import React from "react";
 
 const Booking = ({ booking, setTreatment }) => {
-  const { name, slots } = booking;
+  const { name, slots, price } = booking;
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <div className="card-body text-center">
@@ -17,6 +17,9 @@ const Booking = ({ booking, setTreatment }) => {
         </p>
         <p>
           {slots.length} {slots.length > 1 ? "spaces" : "space"} available
+        </p>
+        <p>
+          <small>price: ৳{price}</small>
         </p>
         <div className="card-actions justify-center">
           <label
