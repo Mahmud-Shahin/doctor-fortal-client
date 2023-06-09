@@ -5,15 +5,16 @@ const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
      const handleSubmit = async (event) => {
+     
         event.preventDefault()
         
     if (!stripe || !elements) {
        
-        return;
+        return
       }
       const card = elements.getElement(CardElement);
 
-      if (card == null) {
+      if (card === null) {
         return;
       }
      }
