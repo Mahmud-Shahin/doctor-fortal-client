@@ -5,6 +5,7 @@
  * 4. create elemants wrapper using publisable key
  * 5. create checkoutform using card element , usestripe , useelement
  * 6. get card elements info(credit card info)
- * 7. get credit card info / error
- * 8.  
+ * 7. get credit card info / error + display card error (if any)
+ * 8. get client secret from backend via payment intent post api.
+ * 9.
  * */

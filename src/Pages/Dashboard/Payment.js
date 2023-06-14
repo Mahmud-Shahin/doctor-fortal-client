@@ -11,7 +11,8 @@ const stripePromise = loadStripe('pk_test_51GwqWnA7iZimIYLsUYjejvw7mYtrOflpB1veZ
 const Payment = () => {
   const { id } = useParams();
   const url = `http://localhost:5000/booking/${id}`;
-  const { data: appoinment , isLoading } = useQuery(["booking", id], () =>
+  // const { data: appoinment , isLoading } = useQuery(["booking", id], () =>
+  const { data: appoinment } = useQuery(["booking", id], () =>
     fetch(url, {
       method: "GET",
       headers: {
@@ -20,9 +21,9 @@ const Payment = () => {
     }).then((res) => res.json())
   )
 
-  if(isLoading){
-    return <Loading></Loading>
-  }
+  // if(isLoading){
+  //   return <Loading></Loading>
+  // }
 
   return (
     <div>

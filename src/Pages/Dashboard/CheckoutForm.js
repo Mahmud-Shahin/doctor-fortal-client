@@ -22,14 +22,15 @@ const CheckoutForm = () => {
         type: 'card',
         card,
       });
-      if(error){
-        console.log(error)
-      }else{
-        setCardError('')
-      }
+      
+    
+        setCardError(error?.message || '')
+    
      }
     return (
-        <form onSubmit={handleSubmit}>
+       <> 
+       
+       <form onSubmit={handleSubmit}>
       <CardElement
         options={{
           style: {
@@ -49,7 +50,13 @@ const CheckoutForm = () => {
       <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe}>
         Pay
       </button>
-    </form>
+    </form>  
+
+    {
+      cardError && <p className='text-red-500'>{cardError} </p>
+    }
+       
+       </>
     );
 };
 
